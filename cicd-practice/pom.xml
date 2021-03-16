@@ -24,6 +24,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.0.0</version>
+				<configuration />
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -33,18 +34,37 @@
 				<configuration>
 				  <cloudHubDeployment>
 			      <uri>https://anypoint.mulesoft.com</uri>
-			      <muleVersion>${mule.version}</muleVersion>
-			      <username>${anypoint.username}</username>
-			      <password>${anypoint.password}</password>
-			      <environment>${env}</environment>
-			      <applicationName>${appname}</applicationName>
-			      <businessGroup>${business}</businessGroup>
-			      <workerType>${vCore}</workerType>
-			      <workers>${workers}</workers>
+			      <muleVersion>${app.runtime}</muleVersion>
+			      
+			      <username>keerthisindhura1234</username>
+			      <password>Keerthisindhura1234$</password>
+			      <environment>Sandbox</environment>
+			      <applicationName>my-first-cicd-practice</applicationName>
+			      <businessGroup>kellton</businessGroup>
+			      <workerType>1</workerType>
+			      <workers>Micro</workers>
 			      <objectStoreV2>true</objectStoreV2>
 			    </cloudHubDeployment>
-  				<classifier>mule-application</classifier>
-				</configuration>
+			    </configuration>
+  					<executions>
+                       
+               <execution>
+                              
+                  <id>deploy</id>
+                              
+                  <phase>deploy</phase>
+                              
+                  <goals>
+                                     
+                     <goal>deploy</goal>
+                                 
+                  </goals>
+                          
+               </execution>
+                   
+            </executions>
+  					
+				
 			</plugin>
 		</plugins>
 	</build>
